@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export const Son = React.memo(({ number, increment }) => {
 	console.log("  Me volví a generar :(  ");

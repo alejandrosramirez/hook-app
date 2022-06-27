@@ -11,12 +11,14 @@ import ReactDOM from "react-dom/client";
 // import { Memorize } from "./06-memos/Memorize";
 // import { MemoHook } from "./06-memos/MemoHook";
 // import { CallBackHook } from "./06-memos/CallBackHook";
-import { Father } from "./07-memo-homework/Father";
+// import { Father } from "./07-memo-homework/Father";
+// import "./08-useReducer/introReducer";
+import { TodoApp } from "./08-useReducer/TodoApp";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
-		<Father />
+		<TodoApp />
 	</React.StrictMode>
 );
 
