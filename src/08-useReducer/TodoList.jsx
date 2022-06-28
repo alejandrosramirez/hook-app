@@ -1,7 +1,11 @@
 import PropTypes from "prop-types";
 import { TodoItem } from "./TodoItem";
 
-export const TodoList = ({ todos = [], handleDeleteTodo, handleToggleTodo }) => {
+export const TodoList = ({
+	todos = [],
+	handleDeleteTodo,
+	handleToggleTodo,
+}) => {
 	return (
 		<>
 			<ul className="list-group">

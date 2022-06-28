@@ -9,7 +9,7 @@ export const TodoItem = ({ todo, handleDeleteTodo, handleToggleTodo }) => {
 			>
 				<span
 					className={`align-self-center ${
-						todo.done ? "text-decoration-line-through" : ''
+						todo.done ? "text-decoration-line-through" : ""
 					}`}
 					onClick={() => handleToggleTodo(todo.id)}
 				>

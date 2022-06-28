@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useForm } from "../hooks";
 
-export const TodoAdd = ({ handleTodo }) => {
+export const TodoAdd = ({ handleAddTodo }) => {
 	const { formState, onChange, onReset, description } = useForm({
 		description: "",
 	});
@@ -19,7 +19,7 @@ export const TodoAdd = ({ handleTodo }) => {
 			done: false,
 		};
 
-		handleTodo(todo);
+		handleAddTodo(todo);
 
 		onReset();
 	};
@@ -45,5 +45,5 @@ export const TodoAdd = ({ handleTodo }) => {
 };
 
 TodoAdd.propTypes = {
-	handleTodo: PropTypes.func.isRequired,
+	handleAddTodo: PropTypes.func.isRequired,
 };
