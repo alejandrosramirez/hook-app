@@ -10,7 +10,7 @@ export const LoginPage = () => {
 
 			<hr />
 
-			<pre>{JSON.stringify(user, null, 3)}</pre>
+			<pre aria-label="pre">{JSON.stringify(user, null, 3)}</pre>
 
 			<button
 				className="btn btn-outline-success"

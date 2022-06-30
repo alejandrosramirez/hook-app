@@ -12,6 +12,7 @@ export const TodoItem = ({ todo, handleDeleteTodo, handleToggleTodo }) => {
 						todo.done ? "text-decoration-line-through" : ""
 					}`}
 					onClick={() => handleToggleTodo(todo.id)}
+					aria-label="span"
 				>
 					{todo.description}
 				</span>

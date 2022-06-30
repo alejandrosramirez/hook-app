@@ -1,4 +1,4 @@
-import { renderHook } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react";
 import { useForm } from "../../src/hooks/useForm";
 
 describe("Pruebas en useForm", () => {
@@ -16,5 +16,38 @@ describe("Pruebas en useForm", () => {
 			onChange: expect.any(Function),
 			onReset: expect.any(Function),
 		});
+	});
+
+	test("Debe de cambiar el nombre del formulario", () => {
+		const value = "Juan";
+		const { result } = renderHook(() => useForm(initialForm));
+		const { onChange } = result.current;
+		act(() => {
+			onChange({
+				target: {
+					name: "name",
+					value,
+				},
+			});
+		});
+		expect(result.current.name).toBe(value);
+		expect(result.current.formState.name).toBe(value);
+	});
+
+	test("Debe de realizar el reset del formulario", () => {
+		const value = "Juan";
+		const { result } = renderHook(() => useForm(initialForm));
+		const { onChange, onReset } = result.current;
+		act(() => {
+			onChange({
+				target: {
+					name: "name",
+					value,
+				},
+			});
+			onReset();
+		});
+		expect(result.current.name).toBe(initialForm.name);
+		expect(result.current.formState.name).toBe(initialForm.name);
 	});
 });
